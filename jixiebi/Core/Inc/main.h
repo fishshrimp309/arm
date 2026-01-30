@@ -28,14 +28,29 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
+// #include "tim.h"
+// #include "usart.h"
+// #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+// #include "servo.h"
 
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+
+typedef enum {
+    MODE_AUTO_REACH = 0, // 自动模式：姿态跟随手臂方向（距离最远，最舒展）
+    MODE_GRAB_FLAT  = 1, // 抓取模式：强制夹爪水平（Pitch = 0）
+    MODE_GRAB_DOWN  = 2  // 俯视模式：强制夹爪垂直向下（Pitch = -90）
+} IK_Mode;
+
+typedef struct {
+    IK_Mode mode;
+} Arm_State;
 
 /* USER CODE END ET */
 

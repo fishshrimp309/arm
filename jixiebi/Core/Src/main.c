@@ -25,6 +25,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "servo.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,6 +36,16 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+// typedef enum {
+//     MODE_AUTO_REACH = 0, // 自动模式：姿态跟随手臂方向（距离最远，最舒展）
+//     MODE_GRAB_FLAT  = 1, // 抓取模式：强制夹爪水平（Pitch = 0）
+//     MODE_GRAB_DOWN  = 2  // 俯视模式：强制夹爪垂直向下（Pitch = -90）
+// } IK_Mode;
+
+// typedef struct {
+//     IK_Mode mode;
+// } Arm_State;
 
 /* USER CODE END PD */
 
@@ -46,6 +58,10 @@
 
 /* USER CODE BEGIN PV */
 
+Arm_State ARM = {
+    .mode = MODE_AUTO_REACH
+};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,6 +72,17 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+// {
+//   if (htim->Instance == TIM6) {
+//     // servo_set_angle(120.0f,120.0f,120.0f,120.0f,120.0f,90.0f);
+
+
+//   }
+// }
+
 
 /* USER CODE END 0 */
 
@@ -94,12 +121,21 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  servo_init();
+  ARM.mode = MODE_AUTO_REACH;
+  // servo_xyz(100.0f, 0.0f, 100.0f, ARM.mode);
+  // servo_set_angle(120.0f,120.0f,120.0f,120.0f,120.0f,90.0f);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    // servo_xyz(100.0f, 0.0f, 100.0f, ARM.mode);
+    // HAL_Delay(2000);
+    // servo_xyz(150.0f, 0.0f, 50.0f, ARM.mode);
+    // HAL_Delay(2000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
