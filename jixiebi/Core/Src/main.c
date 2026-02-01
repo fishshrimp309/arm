@@ -122,9 +122,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   servo_init();
-  ARM.mode = MODE_AUTO_REACH;
-  // servo_xyz(100.0f, 0.0f, 100.0f, ARM.mode);
-  // servo_set_angle(120.0f,120.0f,120.0f,120.0f,120.0f,90.0f);
+  ARM.mode = MODE_GRAB_FLAT;
 
   /* USER CODE END 2 */
 
@@ -132,10 +130,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    // servo_xyz(100.0f, 0.0f, 100.0f, ARM.mode);
-    // HAL_Delay(2000);
-    // servo_xyz(150.0f, 0.0f, 50.0f, ARM.mode);
-    // HAL_Delay(2000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

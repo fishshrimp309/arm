@@ -8,10 +8,10 @@
 #define angle_zero 500
 #define angle_rate 11.11111f
 // 硬件参数：请根据你的实物测量并修改（单位：mm）
-#define L1 60.0f  // 底座底面到j2的高度
-#define L2 50.0f  // j2-j3长度
-#define L3 50.0f  // j3-j4长度
-#define L4 80.0f  // J4到夹爪末端长度
+#define L1 55.0f  // 底座底面到j2的高度
+#define L2 30.0f  // j2-j3长度
+#define L3 30.0f  // j3-j4长度
+#define L4 90.0f  // J4到夹爪末端长度
 #define M_PI 3.14159265358979323846f
 
 typedef struct {
